@@ -45,7 +45,10 @@ export class Game {
         player.cardDealt(card);
       }
     }
-    // Important: When turns have been implemented, remove this line
+    for (const seat of this.seats) {
+      const player = seat.player;
+      player.checkHand();
+    }
     this.end(); // Ends game after cards are dealt
   }
 }
